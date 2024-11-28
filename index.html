@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #yellow {
+            width: 1365px;
+            height: 500px;
+            background: url("https://img.freepik.com/premium-vector/cool-groovy-liquid-background-vector-design-trendy-y2k-background-texture-funky-retro-wallpaper_651519-380.jpg");
+            background-repeat: no-repeat;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        #image {
+            display: none;
+            transition: left 0.3s ease, top 0.3s ease;
+        }
+
+        #target {  width: 1365px;
+            background-color: #ffda54;
+            height: 106px;
+        }
+        #image2{    max-width: 200px;
+    position: relative;
+    left: 300px;
+    top: 150px;
+}
+h2{position: absolute;
+    left: 500px;
+    top: 180px;
+    font-size: 3.5rem;
+    color: #0e0e5c;
+}
+    </style>
+</head>
+
+<body>
+
+    <!--COLOR  CORDINATES-->
+    <div id="yellow">
+      <img src="https://cdn.custom-cursor.com/packs/500/pack461.png" id="image2">
+      <h2>Custom Cursor</h2>
+      
+        <img src="images/screenshot_custom-cursor-trails.com.png" id="image">
+    </div>
+    <p id="target"></p>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        //SCREEN CORDINATES THAT MOVE
+        //DIV BOX BNANA HAI = PARAGRAPH JOU KAI CORDINATES BTAI GA
+        // DIV KOU SELECT KRAIN Gai uskou color dain ai
+        // div pr event listener lgayain gai  or phir select krain gai result
+        // inner text of res is e.screen and e.client
+
+        let box5 = document.querySelector("#yellow")
+        box5.addEventListener("mousemove", (event) => {
+            let reso = document.querySelector("#target")
+            reso.innerText = `  Screen: ${event.screenX}, ${event.screenY}
+    Client:${event.clientX}, ${event.clientY}`
+
+            const star = document.querySelector("#image")
+
+            star.style.cssText = `width: 30px;position:absolute; left:${event.clientX}px ;top: ${event.clientY}px;display:block;background-color: blue;
+box-shadow: 19px 20px 20px 5px #0ff;height:30px`
+
+        })
+    </script>
+</body>
+
+</html>
